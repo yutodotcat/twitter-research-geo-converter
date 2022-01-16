@@ -1,14 +1,12 @@
 import copy
 import json
-import os
-import os.path
 from typing import Dict, List, Optional, Tuple
 
 import pymongo
 
 
 class MongoConnection:
-    __SETTING_FILE: str = "/config.json"
+    __SETTING_FILE: str = "/workspace/worker/config.json"
     __CONFIG_KEYS: Dict[str, str] = {
         key: key for key in [
             # must be same in config.json keys
@@ -146,9 +144,8 @@ class MongoConnection:
         config.json must be placed in same directory
         """
         new_instance: MongoConnection
-        with open(
-            os.path.dirname(__file__) + cls.__SETTING_FILE, "r"
-        ) as setting_file:
+        with open(cls.__SETTING_FILE, "r"
+                  ) as setting_file:
             mongo_configs: Dict[str, str] = json.load(
                 setting_file)["analysis"]["mongodb"]
             new_instance = MongoConnection(mongo_configs)
