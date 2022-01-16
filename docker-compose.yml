@@ -7,5 +7,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - ./:/worker
-    working_dir: /worker
+      - ./:/workspace/worker
+    working_dir: /workspace/worker
+    environment:
+      PYTHONPATH: /workspace/worker/
