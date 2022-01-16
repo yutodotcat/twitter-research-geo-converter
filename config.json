@@ -1,0 +1,20 @@
+{
+    "analysis": {
+        "__mongodb_comment": {
+            "about_auth": "if auth to mongodb is not required the below fields from auth must be empty or False",
+            "for_docker": "host: host.docker.internal",
+            "for_localhost": "host: localhost"
+        },
+        "mongodb": {
+            "auth": "True",
+            "database_name": "research",
+            "collection_name": "tweets",
+            "host": "host.docker.internal",
+            "port": "27017",
+            "username": "username_is_required",
+            "password": "password_is_required",
+            "authSource": "admin",
+            "authMechanism": "SCRAM-SHA-1"
+        }
+    }
+}

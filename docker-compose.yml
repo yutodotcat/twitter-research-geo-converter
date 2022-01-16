@@ -1,0 +1,11 @@
+version: "3"
+services:
+  geo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/worker
+    working_dir: /worker

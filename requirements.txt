@@ -1,0 +1,5 @@
+# to use count method that is removed on latest pymongo
+pymongo==3.12.0
+simple-geocoding
+tqdm
+pytest
