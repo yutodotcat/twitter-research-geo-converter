@@ -14,5 +14,5 @@ jobs:
       - name: Docker Compose Up
         run: docker-compose up --build -d
       - name: Run Pytest
-        run: docker-compose exec -T twitter pytest ./src/tests/
+        run: docker-compose exec -T geo pytest ./tests/
 
