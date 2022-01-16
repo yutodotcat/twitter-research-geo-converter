@@ -4,7 +4,7 @@
 """
 import pymongo
 from pymongo.cursor import Cursor
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 from simple_geocoding import Geocoding
 from tqdm import tqdm
 
@@ -34,7 +34,17 @@ class GeoConverter:
         return (average_longitude, average_latitude)
 
     @classmethod
-    def convert_geo_reverse_and_save(cls, collection_name: str, skip: int = 0) -> None:
+    def convert_geo_reverse_and_save(
+        cls
+        collection_name: str
+        optional_query: Optional[Dict[str, Any]] = None
+    ) -> None:
+        """
+        Comments:
+            * database in config.json is used 
+        Args:
+            * collection_name: collection name to be updated
+        """
         mongo: MongoConnection = MongoConnection.create_instance_from_config()
         target_mongodb: MongoConnection = mongo.create_new_instance(
             collection_name=collection_name,
@@ -44,7 +54,9 @@ class GeoConverter:
         update_data: List[Dict[str, Any]] = []
         LIMIT: int = 40000
 
-        cursor: Cursor = target_mongodb.collection.find({}).skip(skip).sort("_id", pymongo.ASCENDING)
+        cursor: Cursor = target_mongodb.collection.find(
+            {} if optional_query is None else optional_query
+        ).skip(skip).sort("_id", pymongo.ASCENDING)
         total: int = cursor.count() - skip
 
         for tweet in tqdm(cursor, total=total):
