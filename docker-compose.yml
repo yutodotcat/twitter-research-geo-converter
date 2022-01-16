@@ -11,3 +11,4 @@ services:
     working_dir: /workspace/worker
     environment:
       PYTHONPATH: /workspace/worker/
+      MYPYPATH: /workspace/worker/
