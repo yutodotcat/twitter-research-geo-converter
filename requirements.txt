@@ -10,7 +10,7 @@ pytest
 typing_extensions
 
 # coding guide
-autopep8
 flake8
 mypy
+autopep8
 isort
