@@ -18,5 +18,5 @@
 
 - 緯度軽度情報から地域名に変換するために使用させていただきました
 - シェイシェイ
-
-https://github.com/geolonia/japanese-addresses
+- ↓
+- https://github.com/geolonia/japanese-addresses
