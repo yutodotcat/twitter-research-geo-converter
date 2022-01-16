@@ -6,6 +6,7 @@ from typing import Dict, List, Optional, Tuple
 
 import pymongo
 
+
 class MongoConnection:
     __SETTING_FILE: str = "/config.json"
     __CONFIG_KEYS: Dict[str, str] = {

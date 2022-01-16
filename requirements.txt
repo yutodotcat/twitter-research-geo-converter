@@ -5,3 +5,12 @@ simple-geocoding
 
 tqdm
 pytest
+
+# anotation
+typing_extensions
+
+# coding guide
+flake8
+mypy
+autopep8
+isort
