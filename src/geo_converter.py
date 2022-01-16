@@ -8,10 +8,10 @@ import pymongo
 from pymongo.cursor import Cursor
 from simple_geocoding import Geocoding
 from tqdm import tqdm
-
-from mongo_connection import MongoConnection
 from utils.logger import LoggerFactory
 from utils.methods import create_default_update_message
+
+from src.mongo_connection import MongoConnection
 
 
 class GeoConverter:
