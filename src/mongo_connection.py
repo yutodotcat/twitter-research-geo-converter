@@ -1,6 +1,5 @@
 import copy
 import json
-import os.path
 from typing import Dict, List, Optional, Tuple
 
 import pymongo
